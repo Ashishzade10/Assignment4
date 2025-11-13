@@ -1,0 +1,31 @@
+from pathlib import Path
+
+
+file = Path("sample.txt")
+
+if file.exists():
+#Reading all the contents at a time
+  print("File exists, reading file!")
+  with open(file, "rt") as fh:
+    contents = fh.read()
+  print(contents)
+
+#Reading content Line-by-Line
+  with open(file, "rt") as fh:
+    content1 = fh.readline()
+    print("Line 1: ", content1)
+    content2 = fh.readline()
+    print("Line 2: ", content2)
+
+#reading lines from the contents
+  with open(file, "rt") as fh:
+    contents = fh.readlines()
+    for item in contents:
+      print(item)
+
+#Creating the file if it does not exists
+else:
+  print("File does not exist, cannot read! Creating file sample.txt")
+  with open("sample.txt", "xt") as fh:
+   fh.write("Creating new file\n")
+   fh.write("Bye")
