@@ -1,0 +1,21 @@
+user_input = input("Enter text to write to the file: ")
+
+with open("output.txt", "w") as file:
+    file.write(user_input + "\n") # Added newline character here
+
+print("Data successfully written to output.txt")
+
+
+additional_data = input("Enter additional text to append: ")
+
+with open("output.txt", "a") as file:
+    file.write(additional_data)
+
+print("Data successfully appended.")
+
+
+with open("output.txt", "r") as file:
+    file_content = file.read()
+
+print("file content of output.txt:\n")
+print(file_content)
